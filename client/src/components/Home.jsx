@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Console from './Console';
-import Player from './Player';
+import Console from './Console.jsx';
+// import Player from './Player';
 
 class Home extends React.Component {
   constructor (props) {
@@ -12,14 +12,24 @@ class Home extends React.Component {
       player2: null,
       player3: null,
       player4: null,
-      name: ''
+      name: '',
+      charName:'',
+      talents: [],
+      quests: [],
+      exp: 0
     }
 
     this.setState = this.setState.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.updatePlayers = this.updatePlayers.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount () {
+    this.updatePlayers();
+  }
+
+  updatePlayers () {
     axios.get('http://localhost:3003/players')
     .then((data) => {
       this.setState({players: data.data})
@@ -32,13 +42,35 @@ class Home extends React.Component {
 
     this.setState({
       [name]: value
-    });
+    }, () => {console.log(this.state)});
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+
+    let newPlayer = {
+      "id": this.state.players.length + 1,
+      "name": this.state.name,
+      "charName": this.state.charName,
+      "talents": this.state.talents,
+      "quests": this.state.quests,
+      "exp": this.state.exp
+    }
+
+    axios.post('http://localhost:3003/players', newPlayer)
+    .then(() => {
+      this.updatePlayers();
+    })
   }
 
   render () {
     return (
       <div>
-        <Console players={this.state.players} />
+        <Console
+          players={this.state.players}
+          handleChange={this.handleChange}
+          handleClick={this.handleClick}
+          />
         {this.state.player1 ? <Player player={this.state.player1} /> : null}
         {this.state.player2 ? <Player player={this.state.player2} /> : null}
         {this.state.player3 ? <Player player={this.state.player3} /> : null}
