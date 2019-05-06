@@ -32,7 +32,8 @@ Once the project moves into development, the press release can be used as a touc
   > Enter a player-name in the initial form, submit, and start entering your stats!
 
 ## Play-testers Love it ##
-  > "This companion app lets me start my game faster, which is all I really want." - Derrick Brandon
+  > ![](https://i.imgur.com/AJC672R.png)
+  > ![](https://i.imgur.com/wFQBZ7S.png)
 
 ## What're You Waiting For? ##
   > Download this bad boy and fire it up!
