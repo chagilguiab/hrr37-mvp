@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Home from './components/Home.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends React.Component {
 
     return (
     <div>
-      Hello world.
+      <Home />
     </div>
     )
   }

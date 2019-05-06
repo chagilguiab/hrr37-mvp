@@ -11,7 +11,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "react-dev": "webpack -d --watch"
+    "start": "json-server --watch db.json --port 3003",
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "express": "^4.16.4",
     "react": "^16.8.6",
