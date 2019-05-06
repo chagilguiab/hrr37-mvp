@@ -31,7 +31,7 @@ Once the project moves into development, the press release can be used as a touc
 ## How to Get Started ##
   > Enter a player-name in the initial form, submit, and start entering your stats!
 
-## Play-testers Love it ##
+## Play-testers Love It ##
   > ![](https://i.imgur.com/AJC672R.png)
   > ![](https://i.imgur.com/wFQBZ7S.png)
 
