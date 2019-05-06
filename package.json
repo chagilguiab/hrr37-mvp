@@ -1,0 +1,37 @@
+{
+  "name": "hrr37-mvp",
+  "version": "1.0.0",
+  "description": "<!-- > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "react-dev": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chagilguiab/hrr37-mvp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chagilguiab/hrr37-mvp/issues"
+  },
+  "homepage": "https://github.com/chagilguiab/hrr37-mvp#readme",
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "express": "^4.16.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
