@@ -23,7 +23,7 @@ Once the project moves into development, the press release can be used as a touc
   > Track your characters' stats, exp, and talents in one app. No more shuffling through the rulebook for the Talent Store; reference and purchase from the Talent Store here, and have your exp automatically adjusted! App supports storing records by player name.
 
 ## Streamlined Logistics Means Quicker Setup and Takedown ##
-  > No more scrambling for tiny stat-sheets and shuffling through the rulebook between game sessions to make Talent purchases; fire up the app and get the good stuff immediately.
+  > No more scrambling for tiny stat-sheets and shuffling through the rulebook between game sessions to make Talent purchases; fire up the app and get to the good stuff immediately.
 
 ## Our Guarantee ##
   > ![](https://i.imgur.com/dRsvFsf.png) - Brock Ross, Head of PR
