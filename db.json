@@ -1,0 +1,6 @@
+{
+  "players": [
+    {"id": 1, "name": "Druthi", "charName": "TBD", "exp": 0},
+    {"id": 2, "name":"Jordis", "charName": "TBD", "exp": 0}
+  ]
+}
