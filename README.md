@@ -1,4 +1,4 @@
-# Project Name #
+# Near and Far Companion App #
 
 <!--
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -16,29 +16,28 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
 
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Near and Far Companion App ##
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## For Noobs and Veterans Alike ##
+  > Conveniently track your stats between game sessions.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Track your characters' stats, exp, and talents in one app. No more shuffling through the rulebook for the Talent Store; reference and purchase from the Talent Store here, and have your exp automatically adjusted! App supports storing records by player name.
 
-## Problem ##
-  > Describe the problem your product solves.
+## Streamlined Logistics Means Quicker Setup and Takedown ##
+  > No more scrambling for tiny stat-sheets and shuffling through the rulebook between game sessions to make Talent purchases; fire up the app and get the good stuff immediately.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+## Our Guarantee ##
+  > ![](https://i.imgur.com/dRsvFsf.png) - Brock Ross, Head of PR
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Enter a player-name in the initial form, submit, and start entering your stats!
 
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+## Play-testers Love it ##
+  > "This companion app lets me start my game faster, which is all I really want." - Derrick Brandon
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+## What're You Waiting For? ##
+  > Download this bad boy and fire it up!
