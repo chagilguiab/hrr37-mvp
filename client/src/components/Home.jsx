@@ -1,17 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import Console from './Console.jsx';
-// import Player from './Player';
+import Player from './Player.jsx';
 
 class Home extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       players: [],
-      player1: null,
-      player2: null,
-      player3: null,
-      player4: null,
+      currentPlayer: '',
       name: '',
       charName:'',
       talents: [],
@@ -23,6 +20,7 @@ class Home extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.updatePlayers = this.updatePlayers.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.setPlayer = this.setPlayer.bind(this);
   }
 
   componentDidMount () {
@@ -42,7 +40,7 @@ class Home extends React.Component {
 
     this.setState({
       [name]: value
-    }, () => {console.log(this.state)});
+    });
   }
 
   handleClick(e) {
@@ -63,18 +61,33 @@ class Home extends React.Component {
     })
   }
 
+  setPlayer (e) {
+    let playerName = e.target.value;
+    this.setState({currentPlayer: playerName}, () => {
+      let currentPlayer;
+      this.state.players.forEach((player) => {
+        if (player.name === playerName) {
+          currentPlayer = player;
+        }
+      })
+      for (let key in currentPlayer) {
+        if (key !== 'name') {
+          this.setState({[key]: currentPlayer[key]}, () => {console.log(this.state)});
+        }
+      }
+    })
+  }
+
   render () {
     return (
       <div>
         <Console
+          setPlayer={this.setPlayer}
           players={this.state.players}
           handleChange={this.handleChange}
           handleClick={this.handleClick}
           />
-        {this.state.player1 ? <Player player={this.state.player1} /> : null}
-        {this.state.player2 ? <Player player={this.state.player2} /> : null}
-        {this.state.player3 ? <Player player={this.state.player3} /> : null}
-        {this.state.player4 ? <Player player={this.state.player4} /> : null}
+        {this.state.currentPlayer ? <Player player={this.state.currentPlayer} /> : null}
       </div>
     )
   }
