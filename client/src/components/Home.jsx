@@ -25,6 +25,7 @@ class Home extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.setPlayer = this.setPlayer.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.updatePlayerStats = this.updatePlayerStats.bind(this);
   }
 
   componentDidMount () {
@@ -90,6 +91,25 @@ class Home extends React.Component {
 
   }
 
+  updatePlayerStats () {
+    let id = this.state.playerData.id;
+    let playerStats = {
+      "name": this.state.name,
+      "charName": this.state.charName,
+      "talents": this.state.talentsString.split(', '),
+      "quests": this.state.questsString.split(', '),
+      "exp": this.state.exp
+    }
+
+    axios.put(`http://localhost:3003/players/${id}`, playerStats)
+    .then(() => {
+      this.updatePlayers();
+    })
+    .then(() => {
+      this.setState({edit: false})
+    })
+  }
+
   render () {
     return (
       <div>
@@ -105,6 +125,7 @@ class Home extends React.Component {
               toggleEdit={this.toggleEdit}
               canEdit={this.state.edit}
               handleChange={this.handleChange}
+              updatePlayerStats={this.updatePlayerStats}
             />
           : null}
       </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const Console = (props) => (
   <div>
     <form>
-      <label>Name:
+      <label>Add New Player:
         <input
           type="text"
           name="name"
