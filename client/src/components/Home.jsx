@@ -132,7 +132,6 @@ class Home extends React.Component {
     let newExp = this.state.exp - cost;
     let newTalents = this.state.talents.concat([talent]);
     let newTalentsString = this.state.talentsString.concat(`, ${talent}`);
-    console.log(newExp, newTalents, newTalentsString)
     this.setState({exp: newExp, talents: newTalents, talentsString: newTalentsString})
   }
 
@@ -162,6 +161,7 @@ class Home extends React.Component {
                 onClick={this.toggleModal}
                 state={this.state}
                 buy={this.buy}
+                toggleEdit={this.toggleEdit}
               />
             </Modal>
             </div>

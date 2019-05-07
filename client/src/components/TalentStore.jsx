@@ -19,6 +19,8 @@ const TalentStore = (props) => {
                 alert(`Not enough exp!`);
               } else {
                 props.buy(item.cost, item.name)
+                props.onClick();
+                alert(`purchased ${item.name}!`)
               }
             }}>Buy</button>
           </div>
