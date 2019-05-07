@@ -154,6 +154,7 @@ class Home extends React.Component {
               handleChange={this.handleChange}
               updatePlayerStats={this.updatePlayerStats}
             />
+            <br />
             <button className="submit-button" onClick={this.toggleModal}>Visit Talent Store</button>
             <Modal
               isOpen={this.state.modalIsOpen}

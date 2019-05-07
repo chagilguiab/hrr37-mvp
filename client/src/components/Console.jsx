@@ -3,13 +3,13 @@ import React from 'react';
 const Console = (props) => (
   <div>
     <form>
-      <label>Add New Player:
+      <label>Add New Player: &nbsp;&nbsp;
         <input
           type="text"
           name="name"
           onChange={props.handleChange}
           />
-      </label>
+      </label>&nbsp;&nbsp;
       <button className="submit-button" onClick={props.handleClick}>Submit</button>
     </form>
     <select onChange={props.setPlayer}>
