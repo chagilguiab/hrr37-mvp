@@ -71,7 +71,8 @@ const Player = (props) => {
     <div>
       <button onClick={props.toggleEdit}>{editButtonText}</button>
       {DOMNode}
-      <button onClick={props.updatePlayerStats}>Submit Changes</button>
+      <br />
+      {props.state.edit ? <button onClick={props.updatePlayerStats}>Submit Changes</button> : null}
     </div>
   )
 }

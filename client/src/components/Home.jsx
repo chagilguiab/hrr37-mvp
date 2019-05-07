@@ -32,11 +32,18 @@ class Home extends React.Component {
     this.updatePlayers();
   }
 
-  updatePlayers () {
+  updatePlayers (callback) {
     axios.get('http://localhost:3003/players')
     .then((data) => {
       this.setState({players: data.data})
-    });
+    })
+    .then(() => {
+      if (callback) {
+        callback();
+      } else {
+        return;
+      }
+    })
   }
 
   toggleEdit () {
@@ -56,7 +63,7 @@ class Home extends React.Component {
     e.preventDefault();
 
     let newPlayer = {
-      "id": this.state.players.length + 1,
+      "id": this.state.players.length,
       "name": this.state.name,
       "charName": this.state.charName,
       "talents": this.state.talents,
@@ -66,12 +73,13 @@ class Home extends React.Component {
 
     axios.post('http://localhost:3003/players', newPlayer)
     .then(() => {
-      this.updatePlayers();
+      alert(`${newPlayer.name} added!`);
+      this.updatePlayers(() => {this.setPlayer(null, newPlayer.name)});
     })
   }
 
-  setPlayer (e) {
-    let targetPlayerName = e.target.value;
+  setPlayer (e, newPlayer) {
+    let targetPlayerName = newPlayer|| e.target.value;
 
     this.state.players.forEach((player) => {
       if (player.name === targetPlayerName) {
@@ -106,7 +114,8 @@ class Home extends React.Component {
       this.updatePlayers();
     })
     .then(() => {
-      this.setState({edit: false})
+      alert(`Changes submitted!`);
+      this.setState({edit: false});
     })
   }
 
