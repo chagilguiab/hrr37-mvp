@@ -10,7 +10,7 @@ const Console = (props) => (
           onChange={props.handleChange}
           />
       </label>
-      <button onClick={props.handleClick}>Submit</button>
+      <button className="submit-button" onClick={props.handleClick}>Submit</button>
     </form>
     <select onChange={props.setPlayer}>
       {props.players.map((player, idx) => {

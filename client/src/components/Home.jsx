@@ -137,7 +137,8 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="container">
+        <span className="title">NEAR and FAR</span>
         <Console
           setPlayer={this.setPlayer}
           players={this.state.players}
@@ -153,7 +154,7 @@ class Home extends React.Component {
               handleChange={this.handleChange}
               updatePlayerStats={this.updatePlayerStats}
             />
-            <button onClick={this.toggleModal}>Visit Talent Store</button>
+            <button className="submit-button" onClick={this.toggleModal}>Visit Talent Store</button>
             <Modal
               isOpen={this.state.modalIsOpen}
             >

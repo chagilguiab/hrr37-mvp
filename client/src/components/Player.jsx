@@ -57,22 +57,22 @@ const Player = (props) => {
     editButtonText = 'Edit'
     DOMNode =
     <div>
-      <span className="charStat">Character Name: {props.state.charName}</span>
+      <span className="charStat">Character Name:</span> {props.state.charName}
       <br />
-      <span className="charStat">Talents: {props.state.talentsString}</span>
+      <span className="charStat">Talents:</span> {props.state.talentsString}
       <br />
-      <span className="charStat">Quests: {props.state.questsString}</span>
+      <span className="charStat">Quests:</span> {props.state.questsString}
       <br />
-      <span className="charStat">EXP:{props.state.exp}</span>
+      <span className="charStat">EXP:</span> {props.state.exp}
     </div>
   }
 
   return (
     <div>
-      <button onClick={props.toggleEdit}>{editButtonText}</button>
+      <button className="submit-button" onClick={props.toggleEdit}>{editButtonText}</button>
       {DOMNode}
       <br />
-      <button onClick={props.updatePlayerStats}>Submit Changes</button>
+      <button className="submit-button" onClick={props.updatePlayerStats}>Submit Changes</button>
     </div>
   )
 }

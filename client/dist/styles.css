@@ -1,0 +1,105 @@
+body, html {
+  height: 100%;
+  background-image: url("https://static1.squarespace.com/static/59230491cd0f6848c4b2f9f5/t/5b4f2acb88251bb298dd8494/1531914997062/Near+and+Far+Ryan+Laukat");
+
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.submit-button, select {
+  background-color: #f39f86;
+  background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
+  font-family: 'Modak', cursive;
+  border-radius: 12px;
+  border: none;
+  color: #8B4513;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+select {
+  padding: 8px 16px;
+
+}
+
+.buy-button {
+  background-color: #f39f86;
+  background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
+  font-family: 'Modak', cursive;
+  border-radius: 12px;
+  border: none;
+  color: #8B4513;
+  padding: 12px 29px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+option, button, select {
+  cursor: pointer;
+}
+
+select:hover, button:hover {
+  background-color:#8B4513;
+  background-color: #f5d020;
+  background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Modak', cursive;
+  font-size: 80px;
+  color:#8B4513;
+  justify-content: center;
+  font-weight: normal;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+}
+
+.talent-store-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Modak', cursive;
+  font-size: 30px;
+  color:#8B4513;
+  justify-content: center;
+  font-weight: normal;
+}
+
+.talent-store {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #772f1a;
+  background-image: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.talent-name, .charStat {
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+}
+
+.form-name {
+  font-family: 'Lobster', cursive;
+}
