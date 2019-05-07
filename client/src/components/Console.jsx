@@ -17,7 +17,6 @@ const Console = (props) => (
         return <option value ={player.name}> {player.name} </option>
       })}
     </select>
-
   </div>
 )
 

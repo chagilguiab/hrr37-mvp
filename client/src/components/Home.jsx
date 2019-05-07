@@ -8,7 +8,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       players: [],
-      currentPlayer: '',
+      playerData: null,
       name: '',
       charName:'',
       talents: [],
@@ -62,20 +62,16 @@ class Home extends React.Component {
   }
 
   setPlayer (e) {
-    let playerName = e.target.value;
-    this.setState({currentPlayer: playerName}, () => {
-      let currentPlayer;
-      this.state.players.forEach((player) => {
-        if (player.name === playerName) {
-          currentPlayer = player;
-        }
-      })
-      for (let key in currentPlayer) {
-        if (key !== 'name') {
-          this.setState({[key]: currentPlayer[key]}, () => {console.log(this.state)});
-        }
+    let targetPlayerName = e.target.value;
+
+    this.state.players.forEach((player) => {
+      if (player.name === targetPlayerName) {
+        this.setState({playerData: player}, () => {
+          console.log(this.state);
+        })
       }
     })
+
   }
 
   render () {
@@ -87,7 +83,11 @@ class Home extends React.Component {
           handleChange={this.handleChange}
           handleClick={this.handleClick}
           />
-        {this.state.currentPlayer ? <Player player={this.state.currentPlayer} /> : null}
+        {this.state.playerData
+          ? <Player
+              player={this.state.playerData}
+            />
+          : null}
       </div>
     )
   }
