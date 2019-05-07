@@ -13,7 +13,10 @@ class Home extends React.Component {
       charName:'',
       talents: [],
       quests: [],
-      exp: 0
+      exp: 0,
+      edit: false,
+      talentsString: '',
+      questsString: ''
     }
 
     this.setState = this.setState.bind(this);
@@ -21,6 +24,7 @@ class Home extends React.Component {
     this.updatePlayers = this.updatePlayers.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.setPlayer = this.setPlayer.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   componentDidMount () {
@@ -32,6 +36,10 @@ class Home extends React.Component {
     .then((data) => {
       this.setState({players: data.data})
     });
+  }
+
+  toggleEdit () {
+    this.setState({edit: !this.state.edit});
   }
 
   handleChange(e) {
@@ -67,7 +75,15 @@ class Home extends React.Component {
     this.state.players.forEach((player) => {
       if (player.name === targetPlayerName) {
         this.setState({playerData: player}, () => {
-          console.log(this.state);
+          for (let key in player) {
+            this.setState({[key]: player[key]}, () => {
+              let talentsString = '';
+              let questsString = '';
+              this.state.talents.forEach((talent, idx) => {return idx === this.state.talents.length - 1 ? talentsString += talent : talentsString += talent + ', '})
+              this.state.quests.forEach((quest, idx) => {return idx === this.state.quests.length - 1 ? questsString += quest : questsString += quest + ', '})
+              this.setState({talentsString: talentsString, questsString: questsString})
+            })
+          }
         })
       }
     })
@@ -85,7 +101,10 @@ class Home extends React.Component {
           />
         {this.state.playerData
           ? <Player
-              player={this.state.playerData}
+              state={this.state}
+              toggleEdit={this.toggleEdit}
+              canEdit={this.state.edit}
+              handleChange={this.handleChange}
             />
           : null}
       </div>

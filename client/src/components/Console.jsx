@@ -13,8 +13,8 @@ const Console = (props) => (
       <button onClick={props.handleClick}>Submit</button>
     </form>
     <select onChange={props.setPlayer}>
-      {props.players.map((player) => {
-        return <option value ={player.name}> {player.name} </option>
+      {props.players.map((player, idx) => {
+        return <option key={idx} value ={player.name}> {player.name} </option>
       })}
     </select>
   </div>
