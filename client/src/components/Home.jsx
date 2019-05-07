@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import Modal from 'react-modal';
 import Console from './Console.jsx';
 import Player from './Player.jsx';
+import TalentStore from './TalentStore.jsx';
 
 class Home extends React.Component {
   constructor (props) {
@@ -16,7 +18,8 @@ class Home extends React.Component {
       exp: 0,
       edit: false,
       talentsString: '',
-      questsString: ''
+      questsString: '',
+      modalIsOpen: false
     }
 
     this.setState = this.setState.bind(this);
@@ -26,10 +29,16 @@ class Home extends React.Component {
     this.setPlayer = this.setPlayer.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
     this.updatePlayerStats = this.updatePlayerStats.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+    this.buy = this.buy.bind(this);
   }
 
   componentDidMount () {
     this.updatePlayers();
+  }
+
+  toggleModal () {
+    this.setState({modalIsOpen: !this.state.modalIsOpen});
   }
 
   updatePlayers (callback) {
@@ -119,6 +128,14 @@ class Home extends React.Component {
     })
   }
 
+  buy (cost, talent) {
+    let newExp = this.state.exp - cost;
+    let newTalents = this.state.talents.concat([talent]);
+    let newTalentsString = this.state.talentsString.concat(`, ${talent}`);
+    console.log(newExp, newTalents, newTalentsString)
+    this.setState({exp: newExp, talents: newTalents, talentsString: newTalentsString})
+  }
+
   render () {
     return (
       <div>
@@ -129,13 +146,25 @@ class Home extends React.Component {
           handleClick={this.handleClick}
           />
         {this.state.playerData
-          ? <Player
+          ? <div>
+            <Player
               state={this.state}
               toggleEdit={this.toggleEdit}
               canEdit={this.state.edit}
               handleChange={this.handleChange}
               updatePlayerStats={this.updatePlayerStats}
             />
+            <button onClick={this.toggleModal}>Visit Talent Store</button>
+            <Modal
+              isOpen={this.state.modalIsOpen}
+            >
+              <TalentStore
+                onClick={this.toggleModal}
+                state={this.state}
+                buy={this.buy}
+              />
+            </Modal>
+            </div>
           : null}
       </div>
     )
